@@ -1,23 +1,22 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hUnPAC5R)
-# Nombre del juego (<- borrar y completar)
+Battle City
 
 ## Equipo de desarrollo
 
-- Alguien
-- Persona
-- etc.
+Ezequiel Ortiz		DNI 39408521
+Richard Coronel 	DNI 39790338
 
-## Capturas
-
-(agregar)
 
 ## Reglas de Juego / Instrucciones
+El juego consiste en controlar un tanque sobre un escenario plagado de tanques enemigos. Su misión consiste en evitar que destruyan su base militar. Se completa el nivel cuando haya destruido todos los tanques enemigos. El juego termina si el enemigo destruye la base o el jugador gasta todas sus vidas.
 
-(Escribirlas)
+Versión de wollok
+Controles:
+Movimientos: ↑ ↓ ← →
+Disparo: X
+Desactivar sonido: B
 
 
-## Otros
-
-- Curso/Facultad
-- Versión de wollok
-- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
+Curso/Facultad: Comision 2 / Universidad Nacional de Hurlingham
+- Versión de wollok 3.0.0
+- Una vez terminado, queremos manternerlo privado.

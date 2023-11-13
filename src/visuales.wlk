@@ -1,9 +1,8 @@
 import wollok.game.*
 import niveles.*
 
-//en este archivos vamos a crear las modelaciones de los objetos de nivel 
-// que depues seran creadas en la clase nivel con el metodo crear todos
-// seran los argumentos de ese metodo
+//en este archivo vamos a crear los modelos de los objetos de nivel.wlk
+// que despues seran creadas en nivel.wlk con el metodo crear()o
 
 class VisualesEnNivel {
 	var property position 
@@ -31,7 +30,7 @@ object barraDeVidas inherits VisualesEnNivel (position = game.at(1,19)){
 }
 
 class Visual {
-//esta clase  esta aparte por que son para las imagenes que apareceran en pantalla
+//crea las imagenes que apareceran en pantalla
 
 	var property image
 	var property position 

@@ -5,7 +5,6 @@ import sonido.*
 import visuales.*
 import personajes.*
 
-// aca vamos a programas las instancias del juego en la que podes iniciar ganar y perder
 object juego {
 
 	method iniciar() {

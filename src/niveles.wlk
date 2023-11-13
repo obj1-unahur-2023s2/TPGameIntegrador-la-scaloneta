@@ -7,10 +7,10 @@ import visuales.*
 import personajes.*
 
 
-// aca vamos a crear los niveles apoyandonos en el objeto organizar niveles que tiene los metodos 
-// de que le pasaria al tanque si pierde las vidas
-object organizarNiveles {
 
+
+object organizarNiveles {
+//Se crean los niveles
 	var property nivelActualNumero = 1
 	var property nivelActual = nivel1
 	var property vidas = 3
@@ -27,8 +27,8 @@ object organizarNiveles {
 	}
 
 	method cargarSiguienteNivel() {
-		// indica que mientas no sea el ultimo nivel pases al que le sigue si es el ultimo 
-		// se llama a juego.ganar() que hace que ganes la partida
+		// indica que mientas no sea el ultimo nivel, avance al siguiente. 
+		// si es el ultimo se llama a juego.ganar() (victoria).
 		if (!self.ultimoNivel()) {
 			nivelActual = nivelActual.siguienteNivel()
 			nivelActualNumero += 1
@@ -51,9 +51,8 @@ object organizarNiveles {
 
 class Nivel {
 
-// aca modelamos el nivel en si los obstaculos que va a llevar, sus posiciones de los personajes 
-// y demas objetos que apareceran en pantalla
-// depues a los niveles lo creamos con distintas variables y le vamos colocando cada objeto en determinada posicion
+// se modelan los obstaculos y personajes. 
+// se crean los niveles y se ubican en el tablero
 	var property ladrillos = []
 	var property bordes = []
 	var property posInicial = null
@@ -63,8 +62,7 @@ class Nivel {
 	var property posDeBase = null
 
 	method iniciar() {
-		// el metodo iniciar  primero limpia el tablero despues va al metodo de crear y configurar objetos
-		// y por ultimo accede al objeto config para configurar los personajes
+		// se accede al objeto config para configurar los personajes
 		game.clear()
 		self.crearYConfigurarObjetos()
 		config.configurarPersonajes()
@@ -72,7 +70,7 @@ class Nivel {
 	}
 
 	method crearYConfigurarObjetos() {
-		// este metodo llama a otro metodo que dice que cree los objetos de cada nivel y en esta instancia se le colola los argumentos
+		// este metodo llama al constructor de objetos de cada nivel
 		// tambien declara la posicion del tanque inicial
 		self.crearTodos(ladrillos + bordes + [ barraDeVidas ] + [ tanqueJugador ] + [ base ] + enemigos)
 		
@@ -81,7 +79,7 @@ class Nivel {
 	}
 
 	method crearTodos(listaObjetos) {
-		// a todos los objetos que se le pasen por parametro va a ejecutar el metodo crear()
+		// ejectura el metodo crear() de todos los objetos
 		listaObjetos.forEach({ objeto => objeto.crear()})
 	}
 	

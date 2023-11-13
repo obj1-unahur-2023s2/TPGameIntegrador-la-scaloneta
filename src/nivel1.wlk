@@ -4,11 +4,11 @@ import nivel2.*
 import visuales.*
 import personajes.*
 
-//en esta seccion se modelara el nivel con 1 variable para utilizar la clase nivel
-// despues lo referenciamos en el objeto organizar nivel en la variable nivel actual
+//en esta seccion se modelara el nivel con una variable para utilizar en nivel.wlk
+// despues lo referenciamos en el objeto OrganizarNivel, en la variable nivelActual
 
 
-//aca vamos a modelar el nivel con los objetos 
+//Se modela el nivel
 const nivel1 = new Nivel(
 	siguienteNivel=nivel2,
 	bordes = [

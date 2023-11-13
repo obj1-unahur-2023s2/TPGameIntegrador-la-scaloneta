@@ -4,10 +4,10 @@ import niveles.*
 import juego.*
 import nivel1.*
 
-//en este archivos se modelaran los personajes los cuales seran el tanque y los enemigos
+//en este archivos se modelaran los personajes (Tanque y enemigos)
 class Personajes {
 
-//estos metodos te va a devolver true o false dependiendo si la posicion a la que te vas a querer mover esta vacia o no
+//indican si la siguiente posicion esta vacia
 	method estaVacioArriba(unaPosicion) = self.casilleroVacio(unaPosicion.up(1))
 
 	method estaVacioAbajo(unaPosicion) = self.casilleroVacio(unaPosicion.down(1))
@@ -30,7 +30,7 @@ object tanqueJugador inherits Personajes {
 		game.addVisual(self)
 	}
 
-	// en los metodos de movimiento se va moviendo preguntando si las celdas vecinas estan vacias para avanzar
+	// en los metodos de moverDirección() valida si las celdas vecinas estan vacias para avanzar
 	method moverArriba() {
 		if (self.estaVacioArriba(self.position())) {
 			position = position.up(1)
@@ -67,7 +67,7 @@ object tanqueJugador inherits Personajes {
 
 	method estaMirandoALaDerecha() = image == "tanque_derecha.png"
 
-	// el metodo disparar va a disparar dependiendo de donde este mirando que va a depender de las imagenes
+	// el metodo disparar() va a disparar dependiendo de donde este mirando que va a depender de las imagenes
 	method disparar() {
 		if (self.estaMirandoArriba()) {
 			self.dispararArriba()
