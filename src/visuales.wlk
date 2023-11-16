@@ -1,8 +1,9 @@
 import wollok.game.*
 import niveles.*
 
-//en este archivo vamos a crear los modelos de los objetos de nivel.wlk
-// que despues seran creadas en nivel.wlk con el metodo crear()o
+//en este archivos vamos a crear las modelaciones de los objetos de nivel 
+// que depues seran creadas en la clase nivel con el metodo crear todos
+// seran los argumentos de ese metodo
 
 class VisualesEnNivel {
 	var property position 
@@ -16,7 +17,12 @@ class Ladrillo inherits VisualesEnNivel{
 	var property image = "ladrillo.jpg"
 	
 	override method teImpactoUnProyectil(){game.removeVisual(self)}
+	method tePisoLaNave(){}
 	
+}
+
+class LadrilloFuerte inherits VisualesEnNivel{
+	var property image = "ladrillo_fuerte.jpg"
 }
 
 class Borde inherits VisualesEnNivel{
@@ -30,7 +36,7 @@ object barraDeVidas inherits VisualesEnNivel (position = game.at(1,19)){
 }
 
 class Visual {
-//crea las imagenes que apareceran en pantalla
+//esta clase  esta aparte por que son para las imagenes que apareceran en pantalla
 
 	var property image
 	var property position 
@@ -41,6 +47,7 @@ class Visual {
 const imagenInicio = new Visual(image = "imagenInicio.jpg", position = game.at(0,5))
 const imagenGameOver = new Visual(image = "gameOver.jpg", position = game.at(0,5))
 const imagenGanadora = new Visual(image = "imagenGanadora.jpg", position = game.at(0,5))
+
 
 
 

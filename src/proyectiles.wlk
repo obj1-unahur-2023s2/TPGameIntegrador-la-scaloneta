@@ -1,101 +1,43 @@
 import wollok.game.*
+import direcciones.*
 
-class Balas {
+class Proyectiles {
 
-	var property image
 	var property position
 
-	method siElProyectilEstaEnElTablero() = position.x() > game.width()
+	method desplazarProyectilEnDireccion(unaDireccion) {}
 
-	method desplazarArriba() {
-		image = "bala_arriba.jpg"
-		game.onTick(50, "municion", { self.moverArriba()})
+	method siElProyectilNoEstaEnElTablero() = position.x() > game.width() and position.y() > game.height()
+
+	method moverEnDireccion(unaDireccion) {}
+
+}
+
+class Balas inherits Proyectiles {
+	var property image 
+
+	override method desplazarProyectilEnDireccion(unaDireccion) {
+		game.onTick(50, "balas", { self.moverEnDireccion(unaDireccion)})
 	}
 
-	method desplazarAbajo() {
-		image = "bala_abajo.jpg"
-		game.onTick(50, "municion", { self.moverAbajo()})
-	}
+	override method moverEnDireccion(unaDireccion) {
+		
+		position = 	unaDireccion.proximaPosicion(position)
 
-	method desplazarseDerecha() {
-		image = "bala_derecha.jpg"
-		game.onTick(50, "municion", { self.moverDerecha()})
-	}
-
-	method desplazarseIzquierda() {
-		image = "bala_izquierda.jpg"
-		game.onTick(50, "municion", { self.moverIzquierda()})
-	}
-
-	method moverAbajo() {
-		position = position.down(1)
-		if (self.siElProyectilEstaEnElTablero()) {
-			self.removerImagen()
+		if (self.siElProyectilNoEstaEnElTablero()) {
+			self.teImpactoUnProyectil()
 		}
 	}
-
-	method moverArriba() {
-		position = position.up(1)
-		if (self.siElProyectilEstaEnElTablero()) {
-			self.removerImagen()
-		}
-	}
-
-	method moverIzquierda() {
-		position = position.left(1)
-		if (self.siElProyectilEstaEnElTablero()) {
-			self.removerImagen()
-		}
-	}
-
-	method moverDerecha() {
-		position = position.right(1)
-		if (self.siElProyectilEstaEnElTablero()) {
-			self.removerImagen()
-		}
-	}
-
-	method removerImagen() {
-		game.removeTickEvent("municion")
-	}
-
-	method teImpactoUnProyectil() {
+	
+	method teImpactoUnProyectil() { 
+		game.removeTickEvent("balas")
 		game.removeVisual(self)
 	}
 
-	method impacto() {
-		game.onCollideDo(self, { unObjeto =>
-			unObjeto.teImpactoUnProyectil()
-			game.removeVisual(self)
-		})
-	}
+	method impacto() { game.onCollideDo(self, { unObjeto =>unObjeto.teImpactoUnProyectil(); self.teImpactoUnProyectil()}) }
 	
-	method tePisoLaNave(){}
+	method tePisoLaNave() {}
 
 }
 
-class Laser inherits Balas {
-
-//esta clase hace exactamente lo mismo que las balas pero se le cambia la imagen de bala por un laser
-	override method desplazarArriba() {
-		image = "laser_arriba.jpg"
-		game.onTick(50, "municion", { self.moverArriba()})
-	}
-
-	override method desplazarAbajo() {
-		image = "laser_abajo.jpg"
-		game.onTick(50, "municion", { self.moverAbajo()})
-	}
-
-	override method desplazarseDerecha() {
-		image = "laser_derecha.jpg"
-		game.onTick(50, "municion", { self.moverDerecha()})
-	}
-
-	override method desplazarseIzquierda() {
-		image = "laser_izquierda.jpg"
-		game.onTick(50, "municion", { self.moverIzquierda()})
-	}
-
-}
 

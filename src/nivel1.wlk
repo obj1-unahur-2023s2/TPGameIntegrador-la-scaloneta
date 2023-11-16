@@ -4,14 +4,14 @@ import nivel2.*
 import visuales.*
 import personajes.*
 
-//en esta seccion se modelara el nivel con una variable para utilizar en nivel.wlk
-// despues lo referenciamos en el objeto OrganizarNivel, en la variable nivelActual
+//en esta seccion se modelara el nivel con 1 variable para utilizar la clase nivel
+// despues lo referenciamos en el objeto organizar nivel en la variable nivel actual
 
 
-//Se modela el nivel
+//aca vamos a modelar el nivel con los objetos 
 const nivel1 = new Nivel(
-	siguienteNivel=nivel2,
-	bordes = [
+ siguienteNivel = nivel2,
+bordes = [
 		//borde izquierdo
 		new Borde(position = game.at(0,0)),
 		new Borde(position = game.at(0,1)),
@@ -99,12 +99,12 @@ const nivel1 = new Nivel(
 		new Borde(position = game.at(17,19)),
 		new Borde(position = game.at(18,19)),
 		new Borde(position = game.at(19,19))
-	],
+	] ,
 	ladrillos = [
 		new Ladrillo(position = game.at(4,2)),
 		new Ladrillo(position = game.at(6,2)),
-		
-		
+		new Ladrillo(position = game.at(8,2)),
+		new Ladrillo(position = game.at(10,2)),
 		new Ladrillo(position = game.at(12,2)),
 		new Ladrillo(position = game.at(14,2)),
 		new Ladrillo(position = game.at(16,2)),
@@ -160,19 +160,17 @@ const nivel1 = new Nivel(
 		new Ladrillo(position = game.at(12,18)),
 		new Ladrillo(position = game.at(15,18)),
 		
-		new Ladrillo(position = game.at(2,18))
-		
+		new Ladrillo(position = game.at(2,18)),
+		new Ladrillo(position = game.at(8,1)),
+		new Ladrillo(position = game.at(10,1))
 	],
-
-  	posInicial = game.at(2,2),
-  	cantEnemigos = 5,
-  	
-  	enemigos = [
+	enemigos = [
 	  new Enemigos(position = game.at(1, 18)),
 	  new Enemigos(position = game.at(4, 18)),
 	  new Enemigos(position = game.at(7, 18)),
 	  new Enemigos(position = game.at(10, 18)),
 	  new Enemigos(position = game.at(11, 18))
-	], 
-	posDeBase = game.at(9, 1)
+	],
+	
+  	posInicial = game.at(2,2)
   )
