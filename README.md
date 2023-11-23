@@ -26,6 +26,8 @@ Curso/Facultad: Comision 2 / Universidad Nacional de Hurlingham
 
 ![caratula3](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/d8aaf2e1-ec75-4866-9ce5-ead1eb83fd70)
 
+![caratula2](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/c4fff06e-a9e2-4f99-90d8-bc721151a14f)
+
 
 
 
