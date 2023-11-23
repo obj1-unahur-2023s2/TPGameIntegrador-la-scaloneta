@@ -22,8 +22,10 @@ Curso/Facultad: Comision 2 / Universidad Nacional de Hurlingham
 - Una vez terminado, queremos manternerlo privado.
 # Imagenes
 
-![caratula](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/d47878ca-2846-43a4-82e8-e06c9b7b9083)
-![caratula2](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/9184c90f-2780-43b6-9768-665319412316)
+![caratula](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/a2db1aef-81f1-46fc-b284-ab05a3087b5e)
+
+![caratula3](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/d8aaf2e1-ec75-4866-9ce5-ead1eb83fd70)
+
 
 
 
