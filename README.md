@@ -20,3 +20,4 @@ Desactivar sonido: B
 Curso/Facultad: Comision 2 / Universidad Nacional de Hurlingham
 - Versión de wollok 3.0.0
 - Una vez terminado, queremos manternerlo privado.
+![caratula](https://github.com/obj1-unahur-2023s2/TPGameIntegrador-la-scaloneta/assets/141964904/fa47b80a-e533-4a17-bc8d-d858b099c9e4)
