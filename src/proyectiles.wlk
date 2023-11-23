@@ -17,7 +17,7 @@ class Balas inherits Proyectiles {
 	var property image 
 
 	override method desplazarProyectilEnDireccion(unaDireccion) {
-		game.onTick(50, "balas", { self.moverEnDireccion(unaDireccion)})
+		game.onTick(50,"balas", { self.moverEnDireccion(unaDireccion)})
 	}
 
 	override method moverEnDireccion(unaDireccion) {
@@ -27,12 +27,10 @@ class Balas inherits Proyectiles {
 		if (self.siElProyectilNoEstaEnElTablero()) {
 			self.teImpactoUnProyectil()
 		}
+		
 	}
 	
-	method teImpactoUnProyectil() { 
-		game.removeTickEvent("balas")
-		game.removeVisual(self)
-	}
+	method teImpactoUnProyectil() {  game.removeVisual(self) }
 
 	method impacto() { game.onCollideDo(self, { unObjeto =>unObjeto.teImpactoUnProyectil(); self.teImpactoUnProyectil()}) }
 	

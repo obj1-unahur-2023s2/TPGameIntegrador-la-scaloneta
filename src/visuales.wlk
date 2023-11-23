@@ -8,8 +8,10 @@ import niveles.*
 class VisualesEnNivel {
 	var property position 
 	
-	method crear() {game.addVisual(self)}
+	method crear() { game.addVisual(self)}
 	method teImpactoUnProyectil(){}
+	method tePisoLaNave() {}
+
 	
 }
 
@@ -17,22 +19,17 @@ class Ladrillo inherits VisualesEnNivel{
 	var property image = "ladrillo.jpg"
 	
 	override method teImpactoUnProyectil(){game.removeVisual(self)}
-	method tePisoLaNave(){}
 	
-}
-
-class LadrilloFuerte inherits VisualesEnNivel{
-	var property image = "ladrillo_fuerte.jpg"
 }
 
 class Borde inherits VisualesEnNivel{
 	var property image = "bordeDeNivel.jpg"
-	
+	override method crear(){ game.addVisual(self) }
 }
 
 object barraDeVidas inherits VisualesEnNivel (position = game.at(1,19)){
-	var property image = "vidas-3corazon.png"
 	method image() = "vidas-" + organizarNiveles.vidas().toString() + "corazon.png"
+	
 }
 
 class Visual {

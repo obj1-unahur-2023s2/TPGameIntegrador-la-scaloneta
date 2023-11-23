@@ -37,7 +37,7 @@ object config {
 		keyboard.down().onPressDo({ tanqueJugador.moverPersonajeA(abajo,"tanque_abajo.png")})
 		keyboard.left().onPressDo({ tanqueJugador.moverPersonajeA(izquierda,"tanque_izquierda.png")})
 		keyboard.right().onPressDo({ tanqueJugador.moverPersonajeA(derecha,"tanque_derecha.png")})
-		keyboard.t().onPressDo({ organizarNiveles.perderVida()})
+		
 	}
 	
 }

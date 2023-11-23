@@ -3,6 +3,8 @@ import proyectiles.*
 import direcciones.*
 import niveles.*
 import juego.*
+import nivel1.*
+import nivel2.*
 
 //en este archivos se modelaran los personajes los cuales seran el tanque y los enemigos
 class Personajes {
@@ -28,6 +30,8 @@ class Personajes {
 		proyectil.impacto()
 		proyectil.desplazarProyectilEnDireccion(unaDireccion)
 	}
+	
+
 
 }
 
@@ -70,12 +74,16 @@ object tanqueJugador inherits Personajes {
 			self.dispararEnDireccion(new Balas(position = self.position().left(1), image = "bala_izquierda.jpg"), izquierda)
 			
 		}
+		
 	}
-
+	
+	method teImpactoUnProyectil() {game.removeVisual(self)}
+	
 	method puntaje(unPuntaje) { cantidadDePuntos += unPuntaje }
 
 	method cantidadDePuntos() = "Tengo" + cantidadDePuntos + "puntos"
-
+	
+	method tePisoLaNave() {}
 }
 
 
@@ -107,10 +115,10 @@ object tanqueJugador inherits Personajes {
 	method tePisoLaNave() { }
 
 	method teImpactoUnProyectil() {
+		organizarNiveles.nivelActual().eliminarEnemigos(self)
 		game.removeVisual(self)
 		tanqueJugador.puntaje(puntaje)
 	}
-
 }
 
 object base {
@@ -126,10 +134,12 @@ object base {
 	}
 	
 	method teImpactoUnProyectil() { 
-		game.removeVisual(self)
-		juego.perder()
+		if (organizarNiveles.nivelActual().noHayEnemigos()){
+			game.removeVisual(self)
+			organizarNiveles.cargarSiguienteNivel()
+		}
 	}
 
 	method position() = position
-
+	
 }

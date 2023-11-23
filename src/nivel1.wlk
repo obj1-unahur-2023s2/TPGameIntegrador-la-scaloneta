@@ -103,8 +103,8 @@ bordes = [
 	ladrillos = [
 		new Ladrillo(position = game.at(4,2)),
 		new Ladrillo(position = game.at(6,2)),
-		new Ladrillo(position = game.at(8,2)),
-		new Ladrillo(position = game.at(10,2)),
+	
+		
 		new Ladrillo(position = game.at(12,2)),
 		new Ladrillo(position = game.at(14,2)),
 		new Ladrillo(position = game.at(16,2)),
@@ -160,9 +160,8 @@ bordes = [
 		new Ladrillo(position = game.at(12,18)),
 		new Ladrillo(position = game.at(15,18)),
 		
-		new Ladrillo(position = game.at(2,18)),
-		new Ladrillo(position = game.at(8,1)),
-		new Ladrillo(position = game.at(10,1))
+		new Ladrillo(position = game.at(2,18))
+	
 	],
 	enemigos = [
 	  new Enemigos(position = game.at(1, 18)),
